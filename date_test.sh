@@ -52,6 +52,7 @@ echo "Time status $SECS_SINCE_ACTION/$RESET_TIME"
 if [ $SECS_SINCE_ACTION -gt $RESET_TIME ]
 then
 	git reset --hard HEAD
+	git clean -f
 	mpg321 -q -g 300 $SCRIPTPATH/aoe_sound.mp3
 	> $REVFLAG_FILEPATH
 fi
